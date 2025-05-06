@@ -645,3 +645,42 @@ footer {
         max-width: 280px;
     }
 }
+
+/*added by the Abish for the form styling purpose*/
+
+/* ===== Form Styling for Add Property Page ===== */
+form .form-group {
+    margin-bottom: 1.5rem;
+}
+
+form .form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--secondary);
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+form .form-group input[type="text"],
+form .form-group input[type="number"],
+form .form-group input[type="file"],
+form .form-group textarea {
+    width: 100%;
+    padding: 0.9rem 1.2rem;
+    border: 1px solid var(--gray);
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+form .form-group input:focus,
+form .form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.15);
+}
+
+form .form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}

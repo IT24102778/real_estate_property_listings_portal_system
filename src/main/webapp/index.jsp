@@ -69,7 +69,7 @@
         <nav class="main-nav">
             <ul>
                 <li><a href="#">Buy</a></li>
-                <li><a href="#">Rent</a></li>
+                <li><a href="listProperties">Properties</a></li>
                 <li><a href="#">Sold</a></li>
                 <li><a href="#">Find Agents</a></li>
                 <li><a href="#">New Builds</a></li>

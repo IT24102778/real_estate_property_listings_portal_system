@@ -1,7 +1,60 @@
 <!DOCTYPE web-app PUBLIC
- "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
- "http://java.sun.com/dtd/web-app_2_3.dtd" >
+        "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+        "http://java.sun.com/dtd/web-app_2_3.dtd">
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
+
+  <!-- All servlet declarations first -->
+  <servlet>
+    <servlet-name>AddProperty</servlet-name>
+    <servlet-class>servlet.AddPropertyServlet</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>ListProperty</servlet-name>
+    <servlet-class>servlet.ListPropertyServlet</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>DeleteProperty</servlet-name>
+    <servlet-class>servlet.DeletePropertyServlet</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>EditPropertyForm</servlet-name>
+    <servlet-class>servlet.EditPropertyFormServlet</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>EditProperty</servlet-name>
+    <servlet-class>servlet.EditPropertyServlet</servlet-class>
+  </servlet>
+
+  <!-- All servlet-mapping declarations after -->
+  <servlet-mapping>
+    <servlet-name>AddProperty</servlet-name>
+    <url-pattern>/addProperty</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>ListProperty</servlet-name>
+    <url-pattern>/listProperties</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>DeleteProperty</servlet-name>
+    <url-pattern>/deleteProperty</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>EditPropertyForm</servlet-name>
+    <url-pattern>/editPropertyForm</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>EditProperty</servlet-name>
+    <url-pattern>/editProperty</url-pattern>
+  </servlet-mapping>
+
 </web-app>
