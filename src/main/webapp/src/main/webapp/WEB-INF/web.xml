@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee
+         https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd"
+         version="6.0">
+  <servlet>
+    <servlet-name>ReviewServlet</servlet-name>
+    <servlet-class>com.example.feedback_review.ReviewServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ReviewServlet</servlet-name>
+    <url-pattern>/review</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ReviewServlet</servlet-name>
+    <url-pattern>/submitReview</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>SummaryServlet</servlet-name>
+    <servlet-class>com.example.feedback_review.SummaryServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SummaryServlet</servlet-name>
+    <url-pattern>/summary</url-pattern>
+  </servlet-mapping>
+
+
+  <servlet>
+    <servlet-name>DeleteReviewServlet</servlet-name>
+    <servlet-class>com.example.feedback_review.DeleteReviewServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DeleteReviewServlet</servlet-name>
+    <url-pattern>/deleteReview</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>EditReviewServlet</servlet-name>
+    <servlet-class>com.example.feedback_review.EditReviewServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>EditReviewServlet</servlet-name>
+    <url-pattern>/editReview</url-pattern>
+  </servlet-mapping>
+
+  <session-config>
+    <session-timeout>30</session-timeout>
+  </session-config>
+
+  <welcome-file-list>
+    <welcome-file>review.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>
