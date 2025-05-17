@@ -1,49 +1,95 @@
-package model;
+package org.example.model;
+
+import java.time.LocalDateTime;
+import java.util.UUID;
 
 public class Property {
-    protected String id;
-    protected String title;
-    protected String location;
-    protected double price;
-    protected String description;
+    private String id;
+    private String title;
+    private String description;
+    private double price;
+    private String location;
+    private String status;
+    private User owner;
+    private LocalDateTime createdAt;
 
-    public String getImageUrl() {
-        return imagePath;
-    }
-
-    public void setImageUrl(String imagePath) {
-        this.imagePath = imagePath;
-    }
-
-    protected String imagePath;
-
-
-    public Property(String id, String title, String location, double price, String description,String imagePath) {
-        this.id = id;
+    public Property(String title, String description, double price, String location, User owner) {
+        this.id = UUID.randomUUID().toString();
         this.title = title;
-        this.location = location;
-        this.price = price;
         this.description = description;
-        this.imagePath=imagePath;
+        this.price = price;
+        this.location = location;
+        this.status = "PENDING";
+        this.owner = owner;
+        this.createdAt = LocalDateTime.now();
     }
 
-    public String getId() { return id; }
-    public String getTitle() { return title; }
-    public String getLocation() { return location; }
-    public double getPrice() { return price; }
-    public String getDescription() { return description; }
-
-    public void setTitle(String title) { this.title = title; }
-    public void setLocation(String location) { this.location = location; }
-    public void setPrice(double price) { this.price = price; }
-    public void setDescription(String description) { this.description = description; }
-
-    public String toFileString() {
-        return id + "|" + title + "|" + location + "|" + price + "|" + description+"|"+ imagePath;
+    public Property() {
+        // Default constructor for Jackson
     }
 
-    public static Property fromFileString(String line) {
-        String[] parts = line.split("\\|");
-        return new Property(parts[0], parts[1], parts[2], Double.parseDouble(parts[3]), parts[4],parts[5]);
+    // Getters and Setters
+    public String getId() {
+        return id;
     }
-}
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public User getOwner() {
+        return owner;
+    }
+
+    public void setOwner(User owner) {
+        this.owner = owner;
+    }
+
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
+    }
+} 
