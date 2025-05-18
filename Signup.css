@@ -1,0 +1,296 @@
+/* ================ BASE STYLES ================ */
+:root {
+    --primary-color: #2563eb;       /* Modern blue */
+    --primary-dark: #1d4ed8;
+    --secondary-color: #f59e0b;     /* Accent orange */
+    --text-color: #1f2937;
+    --text-light: #6b7280;
+    --bg-color: #f9fafb;
+    --border-color: #e5e7eb;
+    --error-color: #ef4444;
+    --success-color: #10b981;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ================ AUTH CONTAINER ================ */
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    padding: 2rem;
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.1) 0%, rgba(29, 78, 216, 0.1) 100%);
+}
+
+/* ================ SIGNUP CONTAINER ================ */
+.signup-container {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    width: 100%;
+    max-width: 28rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.signup-container:hover {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.signup-container h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--primary-color);
+    font-weight: 500;
+    font-size: 1.875rem;
+}
+
+/* ================ FORM STYLES ================ */
+#signupForm {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.name-group {
+    display: flex;
+    gap: 1rem;
+}
+
+.half-width {
+    flex: 1;
+}
+
+.input-group {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.input-group label {
+    font-weight: 500;
+    color: var(--text-color);
+    font-size: 0.875rem;
+}
+
+.input-group input {
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    transition: all 0.2s ease;
+    background-color: var(--bg-color);
+}
+
+.input-group input:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.input-group input::placeholder {
+    color: var(--text-light);
+    opacity: 0.6;
+}
+
+.password-hint {
+    font-size: 0.75rem;
+    color: var(--text-light);
+    margin-top: 0.25rem;
+}
+
+/* ================ BUTTON STYLES ================ */
+.auth-button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.875rem;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-top: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.025em;
+}
+
+.auth-button:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-1px);
+}
+
+.auth-button:active {
+    transform: translateY(0);
+}
+
+/* ================ SWITCH AUTH ================ */
+.switch-auth {
+    text-align: center;
+    margin-top: 1.5rem;
+    color: var(--text-light);
+    font-size: 0.875rem;
+}
+
+.switch-link {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+.switch-link:hover {
+    color: var(--primary-dark);
+}
+
+.switch-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: var(--primary-color);
+    transition: width 0.2s ease;
+}
+
+.switch-link:hover::after {
+    width: 100%;
+}
+
+/* ================ ERROR STATES ================ */
+.error-message {
+    color: var(--error-color);
+    font-size: 0.75rem;
+    margin-top: 0.25rem;
+    display: none;
+}
+
+.input-group.error .error-message {
+    display: block;
+}
+
+.input-group.error input {
+    border-color: var(--error-color);
+}
+
+.input-group.success input {
+    border-color: var(--success-color);
+}
+
+/* ================ PASSWORD STRENGTH ================ */
+.password-strength {
+    margin-top: 0.5rem;
+    height: 0.25rem;
+    background-color: var(--border-color);
+    border-radius: 0.125rem;
+    overflow: hidden;
+}
+
+.strength-meter {
+    height: 100%;
+    width: 0;
+    transition: all 0.3s ease;
+}
+
+/* ================ RESPONSIVE DESIGN ================ */
+@media (max-width: 640px) {
+    .signup-container {
+        padding: 1.5rem;
+    }
+
+    .name-group {
+        flex-direction: column;
+        gap: 1.25rem;
+    }
+}
+
+/* ================ ANIMATIONS ================ */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.error-message {
+    animation: fadeIn 0.3s ease-out;
+}
+/* Add these to your existing CSS */
+
+/* Mobile Menu Toggle */
+.mobile-menu-toggle {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    margin-right: 15px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .sidebar {
+        position: fixed;
+        left: -250px;
+        top: 0;
+        bottom: 0;
+        transition: left 0.3s ease;
+        z-index: 1000;
+    }
+
+    .sidebar.active {
+        left: 0;
+    }
+
+    .main-content {
+        margin-left: 0;
+    }
+
+    .mobile-menu-toggle {
+        display: block;
+    }
+
+    .stats-container {
+        flex-direction: column;
+    }
+}
+
+/* Loading state */
+.dashboard-container:not(.loaded) {
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+.dashboard-container:not(.loaded):after {
+    content: "Loading...";
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* Activity item active state */
+.activity-list li.active {
+    background-color: #f8f9fa;
+    border-left: 4px solid #3498db;
+}
